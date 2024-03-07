@@ -26,12 +26,15 @@ public class PacienteDaoH2 implements IDao<Paciente> {
         Connection connection = null;
 
         try {
+            //DomicilioDaoH2 domicilioDaoH2 = new DomicilioDaoH2();
+            //domicilioDaoH2.guardar(paciente.getDomicilio());
             connection = BD.getConnection();
             PreparedStatement psInsert = connection.prepareStatement(INSERT_PACIENTE, Statement.RETURN_GENERATED_KEYS);
             psInsert.setString(1, paciente.getNombre());
             psInsert.setString(2, paciente.getApellido());
             psInsert.setString(3, paciente.getDni());
             psInsert.setDate(4, new Date(paciente.getFechaIngreso().getYear(),paciente.getFechaIngreso().getMonthValue(),paciente.getFechaIngreso().getDayOfMonth()));
+           // psInsert.setDate(4, Date.valueOf(paciente.getFechaIngreso()));
             psInsert.setInt(5, paciente.getDomicilio().getId());
 
             psInsert.execute();
