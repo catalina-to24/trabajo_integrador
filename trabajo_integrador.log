@@ -1,0 +1,28 @@
+[2024-03-08 20:45:19] [ INFO ] [BD:54] se creo la tabla odontologos
+[2024-03-08 20:45:19] [ INFO ] [BD:56] se insertó un valor en la tabla odontologos
+[2024-03-08 20:49:18] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 20:49:18] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 20:51:10] [ INFO ] [BD:54] se creo la tabla odontologos
+[2024-03-08 20:51:10] [ INFO ] [BD:56] se insertó un valor en la tabla odontologos
+[2024-03-08 20:51:30] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 20:51:30] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 20:51:37] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 20:51:37] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 20:55:29] [ INFO ] [BD:54] se creo la tabla odontologos
+[2024-03-08 20:55:29] [ INFO ] [BD:56] se insertó un valor en la tabla odontologos
+[2024-03-08 20:57:41] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 20:57:41] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 20:57:44] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 20:57:44] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 21:02:42] [ INFO ] [BD:54] se creo la tabla odontologos
+[2024-03-08 21:02:42] [ INFO ] [BD:56] se insertó un valor en la tabla odontologos
+[2024-03-08 21:02:54] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 21:02:54] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 21:02:56] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 21:02:56] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 21:05:02] [ INFO ] [BD:54] se creo la tabla odontologos
+[2024-03-08 21:05:02] [ INFO ] [BD:56] se insertó un valor en la tabla odontologos
+[2024-03-08 21:05:15] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 21:05:15] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-08 21:05:17] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
+[2024-03-08 21:05:17] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio

@@ -9,7 +9,7 @@ public interface IDao<T> {
 
     void eliminar(Integer id);
 
-    void actualizar(T t);
+    T actualizar(T t);
 
     List<T> listarTodos();
 }
