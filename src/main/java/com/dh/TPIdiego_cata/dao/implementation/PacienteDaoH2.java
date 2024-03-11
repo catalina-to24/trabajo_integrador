@@ -2,11 +2,8 @@ package com.dh.TPIdiego_cata.dao.implementation;
 
 import com.dh.TPIdiego_cata.dao.BD;
 import com.dh.TPIdiego_cata.dao.IDao;
-import com.dh.TPIdiego_cata.model.Domicilio;
 import com.dh.TPIdiego_cata.model.Paciente;
-import com.sun.xml.internal.bind.v2.TODO;
 import org.apache.log4j.Logger;
-import java.time.LocalDate;
 
 import java.sql.*;
 import java.util.List;
