@@ -26,3 +26,15 @@
 [2024-03-08 21:05:15] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
 [2024-03-08 21:05:17] [ INFO ] [PacienteDaoH2:25] Persistiendo un paciente
 [2024-03-08 21:05:17] [ INFO ] [DomicilioDaoH2:24] Persistiendo un domicilio
+[2024-03-13 18:51:49] [ INFO ] [BD:54] se creo la tabla odontologos
+[2024-03-13 18:51:49] [ INFO ] [BD:56] se insertó un valor en la tabla odontologos
+[2024-03-13 18:53:15] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.
+[2024-03-13 18:56:09] [ INFO ] [OdontologoDaoH2:108] Actualizando un odontólogo
+[2024-03-13 18:57:38] [ INFO ] [OdontologoDaoH2:25] Estamos guardando un odontologo
+[2024-03-13 18:57:46] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.
+[2024-03-13 19:00:46] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.
+[2024-03-13 19:02:11] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.
+[2024-03-13 19:02:15] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.
+[2024-03-13 19:02:17] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.
+[2024-03-13 19:02:33] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.
+[2024-03-13 19:02:35] [ INFO ] [OdontologoDaoH2:134] Estamos consultando todos los Odontologos.

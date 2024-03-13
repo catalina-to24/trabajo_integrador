@@ -6,14 +6,17 @@ import com.dh.TPIdiego_cata.model.Odontologo;
 import com.dh.TPIdiego_cata.model.Paciente;
 import com.dh.TPIdiego_cata.service.IOdontologoService;
 import com.dh.TPIdiego_cata.service.IPacienteService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class OdontologoService implements IOdontologoService {
 
     private IDao<Odontologo> iDaoOdontologo;
-    public OdontologoService() {
-        iDaoOdontologo = new OdontologoDaoH2();
+    @Autowired
+    public OdontologoService(OdontologoDaoH2 odontologoDaoH2) {
+        this.iDaoOdontologo = odontologoDaoH2;
     }
 
     @Override

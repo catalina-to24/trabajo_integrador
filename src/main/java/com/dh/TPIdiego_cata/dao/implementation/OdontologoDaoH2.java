@@ -4,18 +4,22 @@ import com.dh.TPIdiego_cata.dao.BD;
 import com.dh.TPIdiego_cata.dao.IDao;
 import com.dh.TPIdiego_cata.model.Odontologo;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class OdontologoDaoH2 implements IDao<Odontologo> {
 
     private static final Logger LOGGER = Logger.getLogger(OdontologoDaoH2.class);
 
     private static final String INSERT_ODONTOLOGOS = "INSERT INTO ODONTOLOGOS (NOMBRE, APELLIDO, MATRICULA) VALUES (?,?,?)";
+    private static final String UPDATE_ODONTOLOGO = "UPDATE ODONTOLOGOS SET NOMBRE = ?, APELLIDO = ?, MATRICULA = ?  WHERE ID = ?";
     private static final String SELECT_ALL = "SELECT * FROM ODONTOLOGOS";
     private static final String SELECT_BY_ID = "SELECT * FROM ODONTOLOGOS WHERE ID = ?";
+    private static final String DELETE_BY_ID = "DELETE FROM ODONTOLOGOS WHERE ID = ?";
+
     @Override
     public Odontologo guardar(Odontologo odontologo) {
         LOGGER.info("Estamos guardando un odontologo");
@@ -80,12 +84,49 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
 
     @Override
     public void eliminar(Integer id) {
+        Connection connection = null;
+        try {
+            connection = BD.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_BY_ID);
+            preparedStatement.setInt(1, id);
 
+            preparedStatement.executeUpdate();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @Override
     public void actualizar(Odontologo odontologo) {
+        LOGGER.info("Actualizando un odontólogo");
+        Connection connection = null;
 
+        try {
+            connection = BD.getConnection();
+            PreparedStatement psUpdate = connection.prepareStatement(UPDATE_ODONTOLOGO);
+            psUpdate.setString(1, odontologo.getNombre());
+            psUpdate.setString(2, odontologo.getApellido());
+            psUpdate.setString(3, odontologo.getMatricula());
+            psUpdate.setInt(4, odontologo.getId());
+
+            psUpdate.execute();
+
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override

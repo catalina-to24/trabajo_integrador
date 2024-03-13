@@ -4,11 +4,12 @@ import com.dh.TPIdiego_cata.dao.BD;
 import com.dh.TPIdiego_cata.dao.IDao;
 import com.dh.TPIdiego_cata.model.Domicilio;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class DomicilioDaoH2 implements IDao<Domicilio> {
 
     private static final Logger LOGGER = Logger.getLogger(DomicilioDaoH2.class);

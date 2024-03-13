@@ -2,10 +2,11 @@ package com.dh.TPIdiego_cata.dao.implementation;
 
 import com.dh.TPIdiego_cata.dao.IDao;
 import com.dh.TPIdiego_cata.model.Turno;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Component
 public class TurnoDaoList implements IDao<Turno> {
 
     private List<Turno> turnoList = new ArrayList<>();
