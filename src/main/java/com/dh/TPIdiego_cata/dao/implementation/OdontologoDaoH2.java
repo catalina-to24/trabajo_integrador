@@ -84,8 +84,8 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     }
 
     @Override
-    public Odontologo actualizar(Odontologo odontologo) {
-        return null;
+    public void actualizar(Odontologo odontologo) {
+
     }
 
     @Override

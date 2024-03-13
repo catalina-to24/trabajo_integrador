@@ -9,7 +9,7 @@ public interface ITurnoService {
 
     public Turno buscarPorId(Integer id);
 
-    public Turno actualizar(Turno turno);
+    public void actualizar(Turno turno);
 
     public void eliminar(Integer id);
 

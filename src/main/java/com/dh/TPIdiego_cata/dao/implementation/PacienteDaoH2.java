@@ -98,8 +98,8 @@ public class PacienteDaoH2 implements IDao<Paciente> {
     }
 
     @Override
-    public Paciente actualizar(Paciente paciente) {
-        return null;
+    public void actualizar(Paciente paciente) {
+
     }
 
     @Override

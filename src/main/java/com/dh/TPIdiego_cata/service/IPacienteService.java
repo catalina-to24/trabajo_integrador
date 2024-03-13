@@ -9,7 +9,7 @@ public interface IPacienteService {
 
     public Paciente buscarPorId(Integer id);
 
-    public Paciente actualizar(Paciente paciente);
+    public void actualizar(Paciente paciente);
 
     public void eliminar(Integer id);
 

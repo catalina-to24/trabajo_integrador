@@ -35,8 +35,8 @@ public class TurnoDaoList implements IDao<Turno> {
     }
 
     @Override
-    public Turno actualizar(Turno turno) {
-        return null;
+    public void actualizar(Turno turno) {
+
     }
 
     @Override

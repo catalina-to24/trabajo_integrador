@@ -23,17 +23,17 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
-    public Turno actualizar(Turno turno) {
-        return null;
+    public void actualizar(Turno turno) {
+        turnoDaoList.actualizar(turno);
     }
 
     @Override
     public void eliminar(Integer id) {
-
+        turnoDaoList.eliminar(id);
     }
 
     @Override
     public List<Turno> listarTodos() {
-        return null;
+        return turnoDaoList.listarTodos();
     }
 }

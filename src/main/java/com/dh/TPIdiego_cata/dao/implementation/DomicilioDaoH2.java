@@ -103,7 +103,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
     }
 
     @Override
-    public Domicilio actualizar(Domicilio domicilio) {
+    public void actualizar(Domicilio domicilio) {
         LOGGER.info("Actualizando un domicilio");
         Connection connection = null;
 
@@ -127,7 +127,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
                 e.printStackTrace();
             }
         }
-        return domicilio;
+        //return domicilio;
     }
 
     @Override

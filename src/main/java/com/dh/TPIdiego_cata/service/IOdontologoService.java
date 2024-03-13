@@ -9,7 +9,7 @@ public interface IOdontologoService {
 
     public Odontologo buscarPorId(Integer id);
 
-    public Odontologo actualizar(Odontologo odontologo);
+    public void actualizar(Odontologo odontologo);
 
     public void eliminar(Integer id);
 

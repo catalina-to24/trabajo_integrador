@@ -11,33 +11,33 @@ import java.util.List;
 
 public class OdontologoService implements IOdontologoService {
 
-    private IDao<Odontologo> iDao;
+    private IDao<Odontologo> iDaoOdontologo;
     public OdontologoService() {
-        iDao = new OdontologoDaoH2();
+        iDaoOdontologo = new OdontologoDaoH2();
     }
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {
-        return iDao.guardar(odontologo);
+        return iDaoOdontologo.guardar(odontologo);
     }
 
     @Override
     public Odontologo buscarPorId(Integer id) {
-        return iDao.buscarPorId(id);
+        return iDaoOdontologo.buscarPorId(id);
     }
 
     @Override
-    public Odontologo actualizar(Odontologo odontologo) {
-        return null;
+    public void actualizar(Odontologo odontologo) {
+        iDaoOdontologo.actualizar(odontologo);
     }
 
     @Override
     public void eliminar(Integer id) {
-
+        iDaoOdontologo.eliminar(id);
     }
 
     @Override
     public List<Odontologo> listarTodos() {
-        return iDao.listarTodos();
+        return iDaoOdontologo.listarTodos();
     }
 }

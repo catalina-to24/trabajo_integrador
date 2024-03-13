@@ -28,8 +28,8 @@ public class PacienteService implements IPacienteService{
     }
 
     @Override
-    public Paciente actualizar(Paciente paciente) {
-        return iDaoPaciente.actualizar(paciente);
+    public void actualizar(Paciente paciente) {
+         iDaoPaciente.actualizar(paciente);
     }
 
     @Override
