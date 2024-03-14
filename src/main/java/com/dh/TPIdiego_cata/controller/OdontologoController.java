@@ -3,6 +3,8 @@ import com.dh.TPIdiego_cata.model.Odontologo;
 import com.dh.TPIdiego_cata.service.IOdontologoService;
 import com.dh.TPIdiego_cata.service.implementation.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,11 +42,21 @@ public class OdontologoController {
             odontologoService.actualizar(odontologo);
             response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
         } else {
-            response = ResponseEntity.ok().body("No se puede actualizar el odontologo");
+            response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el odontólogo a actualizar");
         }
         return response;
     }
-    //@DeleteMapping
-    //public ResponseEntity<String> eliminar()
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable Integer id){
+        ResponseEntity<String> response;
+        Odontologo odontologoBuscado = odontologoService.buscarPorId(id);
+        if (odontologoBuscado != null) {
+            odontologoService.eliminar(id);
+            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado correctamente");
+        } else {
+            response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el odontólogo a eliminar");
+        }
+        return response;
+    }
 
 }

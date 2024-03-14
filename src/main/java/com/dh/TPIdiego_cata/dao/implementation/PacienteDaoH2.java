@@ -96,6 +96,12 @@ public class PacienteDaoH2 implements IDao<Paciente> {
     public void eliminar(Integer id) {
         Connection connection = null;
         try {
+
+            //TODO BUSCAR PACIENTE PARA OBTENER EL DOMICILIO Y LUEGO PODER BORRARLO?
+            Paciente pacienteBuscado = buscarPorId(id);
+            DomicilioDaoH2 domicilioDaoH2 = new DomicilioDaoH2();
+            domicilioDaoH2.eliminar(pacienteBuscado.getDomicilio().getId());
+
             connection = BD.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(DELETE_BY_ID);
             preparedStatement.setInt(1, id);
@@ -130,6 +136,9 @@ public class PacienteDaoH2 implements IDao<Paciente> {
 
             psUpdate.execute();
 
+            DomicilioDaoH2 domicilioDaoH2 = new DomicilioDaoH2();
+            domicilioDaoH2.actualizar(paciente.getDomicilio());
+
         }catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -155,10 +164,8 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             PreparedStatement psSelect = connection.prepareStatement(SELECT_ALL);
             ResultSet rs = psSelect.executeQuery();
 
-            //NSERT INTO PACIENTES (NOMBRE, APELLIDO, DNI, FECHA_INGRESO, DOMICILIO_ID)
-
             while (rs.next()) {
-                Domicilio domicilio = domicilioDaoH2.buscarPorId(rs.getInt("DOMICLIO_ID"));
+                Domicilio domicilio = domicilioDaoH2.buscarPorId(rs.getInt("DOMICILIO_ID"));
                 paciente = new Paciente(rs.getInt("ID"),rs.getString("NOMBRE"),
                         rs.getString("APELLIDO"), rs.getString("DNI"), rs.getDate("FECHA_INGRESO").toLocalDate(), domicilio);
 

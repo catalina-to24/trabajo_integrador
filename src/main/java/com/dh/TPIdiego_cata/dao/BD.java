@@ -32,7 +32,7 @@ public class BD {
             " MATRICULA VARCHAR(100) NOT NULL)";
 
     private static final String SQL_INSERT_ODONTOLOGOS = "INSERT INTO ODONTOLOGOS (NOMBRE, APELLIDO, MATRICULA) " +
-            "VALUES ('Diego', 'Gimenez', '123')";
+            "VALUES ('Nombre Odonto 1', 'Apellido Odonto 2', '1234'), ('Nombre Odonto 2', 'Apellido Odonto 3', '5678')";
 
 
     public static Connection getConnection() throws Exception {
