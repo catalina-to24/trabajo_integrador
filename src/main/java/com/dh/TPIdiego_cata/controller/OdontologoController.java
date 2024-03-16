@@ -20,7 +20,7 @@ public class OdontologoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Long id) {
+    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Integer id) {
         //return ResponseEntity.ok(odontologoService.buscarPorId(id));
         return null;
     }
@@ -48,7 +48,7 @@ public class OdontologoController {
         return response;
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar(@PathVariable Long id){
+    public ResponseEntity<String> eliminar(@PathVariable Integer id){
         ResponseEntity<String> response;
         //Odontologo odontologoBuscado = odontologoService.buscarPorId(id);
         Odontologo odontologoBuscado = null;
