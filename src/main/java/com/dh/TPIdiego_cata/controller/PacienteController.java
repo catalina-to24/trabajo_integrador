@@ -40,7 +40,7 @@ public class PacienteController {
         Paciente pacienteBuscado = null;
         if (pacienteBuscado != null) {
             pacienteService.actualizar(paciente);
-            response = ResponseEntity.ok("Se actualizó el paciente con id " + pacienteBuscado.getId());
+            response = ResponseEntity.ok("Se actualizó el paciente con id " + pacienteBuscado);//.getId());
         } else {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el paciente a actualizar");
         }
