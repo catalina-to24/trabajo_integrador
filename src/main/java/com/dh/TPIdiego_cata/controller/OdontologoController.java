@@ -1,10 +1,9 @@
 package com.dh.TPIdiego_cata.controller;
-import com.dh.TPIdiego_cata.model.Odontologo;
+import com.dh.TPIdiego_cata.entity.Odontologo;
 import com.dh.TPIdiego_cata.service.IOdontologoService;
 import com.dh.TPIdiego_cata.service.implementation.OdontologoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,8 +20,9 @@ public class OdontologoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Integer id) {
-        return ResponseEntity.ok(odontologoService.buscarPorId(id));
+    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Long id) {
+        //return ResponseEntity.ok(odontologoService.buscarPorId(id));
+        return null;
     }
     @PostMapping
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo) {
@@ -37,7 +37,8 @@ public class OdontologoController {
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
         ResponseEntity<String> response;
-        Odontologo odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
+        //Odontologo odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
+        Odontologo odontologoBuscado = null;
         if (odontologoBuscado != null) {
             odontologoService.actualizar(odontologo);
             response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
@@ -47,9 +48,10 @@ public class OdontologoController {
         return response;
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar(@PathVariable Integer id){
+    public ResponseEntity<String> eliminar(@PathVariable Long id){
         ResponseEntity<String> response;
-        Odontologo odontologoBuscado = odontologoService.buscarPorId(id);
+        //Odontologo odontologoBuscado = odontologoService.buscarPorId(id);
+        Odontologo odontologoBuscado = null;
         if (odontologoBuscado != null) {
             odontologoService.eliminar(id);
             response = ResponseEntity.status(HttpStatus.OK).body("Eliminado correctamente");

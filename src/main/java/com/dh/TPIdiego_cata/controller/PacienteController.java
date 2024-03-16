@@ -1,6 +1,6 @@
 package com.dh.TPIdiego_cata.controller;
 
-import com.dh.TPIdiego_cata.model.Paciente;
+import com.dh.TPIdiego_cata.entity.Paciente;
 import com.dh.TPIdiego_cata.service.IPacienteService;
 import com.dh.TPIdiego_cata.service.implementation.PacienteService;
 import org.springframework.http.HttpStatus;
@@ -19,8 +19,9 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Paciente> buscarPorId(@PathVariable Integer id) {
-        return ResponseEntity.ok(pacienteService.buscarPorId(id));
+    public ResponseEntity<Paciente> buscarPorId(@PathVariable Long id) {
+        //return ResponseEntity.ok(pacienteService.buscarPorId(id));
+        return null;
     }
     @PostMapping
     public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente) {
@@ -35,7 +36,8 @@ public class PacienteController {
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Paciente paciente) {
         ResponseEntity<String> response;
-        Paciente pacienteBuscado = pacienteService.buscarPorId(paciente.getId());
+        //Paciente pacienteBuscado = pacienteService.buscarPorId(paciente.getId());
+        Paciente pacienteBuscado = null;
         if (pacienteBuscado != null) {
             pacienteService.actualizar(paciente);
             response = ResponseEntity.ok("Se actualizó el paciente con id " + pacienteBuscado.getId());
@@ -45,9 +47,10 @@ public class PacienteController {
         return response;
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar(@PathVariable Integer id){
+    public ResponseEntity<String> eliminar(@PathVariable Long id){
         ResponseEntity<String> response;
-        Paciente pacienteBuscado = pacienteService.buscarPorId(id);
+        //Paciente pacienteBuscado = pacienteService.buscarPorId(id);
+        Paciente pacienteBuscado = null;
         if (pacienteBuscado != null) {
             pacienteService.eliminar(id);
             response = ResponseEntity.status(HttpStatus.OK).body("Eliminado correctamente");

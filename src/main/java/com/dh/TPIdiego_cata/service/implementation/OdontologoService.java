@@ -1,46 +1,50 @@
 package com.dh.TPIdiego_cata.service.implementation;
 
-import com.dh.TPIdiego_cata.dao.IDao;
-import com.dh.TPIdiego_cata.dao.implementation.OdontologoDaoH2;
-import com.dh.TPIdiego_cata.model.Odontologo;
-import com.dh.TPIdiego_cata.model.Paciente;
+import com.dh.TPIdiego_cata.entity.Odontologo;
+import com.dh.TPIdiego_cata.repository.IOdontologoRepository;
 import com.dh.TPIdiego_cata.service.IOdontologoService;
-import com.dh.TPIdiego_cata.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class OdontologoService implements IOdontologoService {
 
-    private IDao<Odontologo> iDaoOdontologo;
+    private IOdontologoRepository odontologoRepository;
     @Autowired
-    public OdontologoService(OdontologoDaoH2 odontologoDaoH2) {
-        this.iDaoOdontologo = odontologoDaoH2;
+    public OdontologoService(IOdontologoRepository odontologoRepository) {
+        this.odontologoRepository = odontologoRepository;
     }
 
     @Override
     public Odontologo guardar(Odontologo odontologo) {
-        return iDaoOdontologo.guardar(odontologo);
+        return odontologoRepository.save(odontologo);
     }
 
     @Override
-    public Odontologo buscarPorId(Integer id) {
-        return iDaoOdontologo.buscarPorId(id);
+    public Optional<Odontologo> buscarPorId(Long id) {
+        Optional<Odontologo> odontologoOptional = odontologoRepository.findById(id);
+        if(odontologoOptional.isPresent()) {
+            return odontologoOptional;
+        } else {
+            return null;
+        }
     }
 
     @Override
     public void actualizar(Odontologo odontologo) {
-        iDaoOdontologo.actualizar(odontologo);
+        odontologoRepository.save(odontologo);
     }
 
     @Override
-    public void eliminar(Integer id) {
-        iDaoOdontologo.eliminar(id);
+    public void eliminar(Long id) {
+        odontologoRepository.deleteById(id);
     }
 
     @Override
     public List<Odontologo> listarTodos() {
-        return iDaoOdontologo.listarTodos();
+        return odontologoRepository.findAll();
     }
 }
