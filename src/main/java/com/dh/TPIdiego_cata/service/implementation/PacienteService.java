@@ -25,13 +25,13 @@ public class PacienteService implements IPacienteService{
     }
 
     @Override
-    public Optional<Paciente> buscarPorId(Long id) {
+    public Paciente buscarPorId(Long id) {
+        Paciente paciente = null;
         Optional<Paciente> pacienteOptional = pacienteRepository.findById(id);
         if(pacienteOptional.isPresent()) {
-            return pacienteOptional;
-        } else {
-            return null;
+            paciente = pacienteOptional.get();
         }
+        return paciente;
     }
 
     @Override

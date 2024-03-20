@@ -24,13 +24,13 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public Optional<Odontologo> buscarPorId(Long id) {
+    public Odontologo buscarPorId(Long id) {
+        Odontologo odontologo = null;
         Optional<Odontologo> odontologoOptional = odontologoRepository.findById(id);
         if(odontologoOptional.isPresent()) {
-            return odontologoOptional;
-        } else {
-            return null;
+            odontologo=odontologoOptional.get();
         }
+        return odontologo;
     }
 
     @Override

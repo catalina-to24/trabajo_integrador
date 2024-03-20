@@ -29,6 +29,15 @@
                     <a class="dropdown-item" href="odontologoAgregar.html">Agregar odontólogos</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    Gestión pacientes
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="pacienteLista.html">Listar pacientes</a>
+                    <a class="dropdown-item" href="pacienteAgregar.html">Agregar pacientes</a>
+                </div>
+            </li>
 
         </ul>
 
@@ -39,8 +48,8 @@
 
     <div class="row">
         <div class="col-sm-7" style="background-color:#e6fffa; padding:10px; border-radius:3px">
-            <h3>Agregar odontólogos</h3>
-            <form id="add_new_dentist">
+            <h3>Agregar pacientes</h3>
+            <form id="add_new_paciente">
                 <div class="form-group">
                     <label class="control-label" for="nombre">Nombre:</label>
                     <input type="text" class="form-control" id="nombre"
@@ -55,15 +64,45 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label" for="matricula">Matrícula:</label>
-                    <input type="text" class="form-control" id="matricula"
-                           placeholder="Ingrese la matrícula"
-                           name="matricula" required></input>
+                    <label class="control-label" for="dni">DNI:</label>
+                    <input type="text" class="form-control" id="dni"
+                           placeholder="Ingrese el DNI"
+                           name="dni" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="fechaIngreso">Fecha de Ingreso:</label>
+                    <input type="date" class="form-control" id="fechaIngreso"
+                           placeholder="Ingrese fecha de Ingreso"
+                           name="fechaIngreso" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="calle">Calle:</label>
+                    <input type="text" class="form-control" id="calle"
+                           placeholder="Ingrese la calle"
+                           name="calle" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="numero">Número:</label>
+                    <input type="text" class="form-control" id="numero"
+                           placeholder="Ingrese el número"
+                           name="numero" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="provincia">Provincia:</label>
+                    <input type="text" class="form-control" id="provincia"
+                           placeholder="Ingrese la provincia"
+                           name="provincia" required></input>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="localidad">Localidad:</label>
+                    <input type="text" class="form-control" id="localidad"
+                           placeholder="Ingrese la localidad"
+                           name="localidad" required></input>
                 </div>
 
 
                 <button type="submit" class="btn btn-danger"
-                        id="btn-add-new-dentist">Guardar</button>
+                        id="btn-add-new-paciente">Guardar</button>
             </form>
             <div id="response" style="display:none; margin-top:10px">
             </div>
@@ -72,5 +111,5 @@
 </div>
 
 </body>
-<script type="text/javascript" src="/js/odontologo/post_odontologo.js"></script>
+<script type="text/javascript" src="/js/paciente/post_paciente.js"></script>
 </html>

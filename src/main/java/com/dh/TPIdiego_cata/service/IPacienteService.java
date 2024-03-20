@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface IPacienteService {
     public Paciente guardar (Paciente paciente);
 
-    public Optional<Paciente> buscarPorId(Long id);
+    public Paciente buscarPorId(Long id);
 
     public void actualizar(Paciente paciente);
 

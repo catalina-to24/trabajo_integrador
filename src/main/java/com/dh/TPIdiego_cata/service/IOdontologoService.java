@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface IOdontologoService {
     public Odontologo guardar (Odontologo odontologo);
 
-    public Optional<Odontologo> buscarPorId(Long id);
+    public Odontologo buscarPorId(Long id);
 
     public void actualizar(Odontologo odontologo);
 
