@@ -1,5 +1,6 @@
 package com.dh.TPIdiego_cata.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,11 +24,13 @@ public class Paciente {
     private String apellido;
     private String dni;
     private LocalDate fechaIngreso;
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "domicilio_id" , referencedColumnName= "id")
     private Domicilio domicilio;
 
     @OneToMany(mappedBy = "paciente")
+    @JsonIgnore
     Set<Turno> turnos;
 
 

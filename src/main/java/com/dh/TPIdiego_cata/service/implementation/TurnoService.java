@@ -3,13 +3,17 @@ package com.dh.TPIdiego_cata.service.implementation;
 import com.dh.TPIdiego_cata.entity.Turno;
 import com.dh.TPIdiego_cata.repository.ITurnoRepository;
 import com.dh.TPIdiego_cata.service.ITurnoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TurnoService implements ITurnoService {
 
     private ITurnoRepository turnoRepository;
+    @Autowired
     public TurnoService(ITurnoRepository turnoRepository) {
         this.turnoRepository = turnoRepository;
     }
@@ -19,13 +23,13 @@ public class TurnoService implements ITurnoService {
     }
 
     @Override
-    public Optional<Turno> buscarPorId(Long id) {
+    public Turno buscarPorId(Long id) {
+        Turno turno = null;
         Optional<Turno> turnoOptional = turnoRepository.findById(id);
         if(turnoOptional.isPresent()) {
-            return turnoOptional;
-        } else {
-            return null;
+            turno = turnoOptional.get();
         }
+        return turno;
     }
 
     @Override

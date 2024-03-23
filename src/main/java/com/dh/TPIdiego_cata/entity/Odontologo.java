@@ -1,5 +1,6 @@
 package com.dh.TPIdiego_cata.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,6 +25,7 @@ public class Odontologo {
     private String matricula;
 
     @OneToMany(mappedBy = "odontologo")
+    @JsonIgnore
     Set<Turno> turnos;
 
 

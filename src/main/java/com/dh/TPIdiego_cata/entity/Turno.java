@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,7 +19,9 @@ public class Turno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate fecha;
+
+    @Column(name = "fecha_hora", columnDefinition = "DATETIME")
+    private LocalDateTime fechaHora;
 
     @ManyToOne
     @JoinColumn(name = "odontologo_id", nullable = false)

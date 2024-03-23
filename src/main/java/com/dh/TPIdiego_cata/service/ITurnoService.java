@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface ITurnoService {
     public Turno guardar (Turno turno);
 
-    public Optional<Turno> buscarPorId(Long id);
+    public Turno buscarPorId(Long id);
 
     public void actualizar(Turno turno);
 

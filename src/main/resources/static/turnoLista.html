@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Odontólogos</title>
+    <title>Turnos</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
 </head>
 <body>
 
@@ -46,21 +47,22 @@
 
 
 <div class="container">
-    <div id="div_dentist_table">
-        <h1>Odontólogos</h1>
+    <div id="div_turno_table">
+        <h1>Turnos</h1>
         <div class="row col-md-6 table-responsive">
-            <table id="dentistTable" class="table table-striped">
+            <table id="turnoTable" class="table table-striped">
                 <thead>
                 <tr>
                     <th></th>
                     <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Matrícula</th>
+                    <th>Fecha-Hora</th>
+                    <th>DNI</th>
+                    <th>Paciente</th>
+                    <th>Odontólogo</th>
                     <th></th>
                 </tr>
                 </thead>
-                <tbody id="dentistTableBody">
+                <tbody id="turnoTableBody">
 
                 </tbody>
             </table>
@@ -70,23 +72,47 @@
     <div class="row">
         <div class="col-sm-6" style="display: none;
 											background-color:#e6fffa; padding:10px; border-radius:3px"
-             id="div_dentist_updating">
-            <form id="update_dentist_form">
+             id="div_turno_updating">
+            <form id="update_turno_form">
                 <div class="form-group">
                     <label >Id:</label>
-                    <input type="text" class="form-control" id="dentist_id" readonly>
+                    <input type="text" class="form-control" id="paciente_id" readonly>
                 </div>
                 <div class="form-group">
                     <label >Nombre:</label>
-                    <input type="text" class="form-control" placeholder="nombre" id="nombre">
+                    <input type="text" class="form-control" placeholder="Nombre" id="nombre">
                 </div>
                 <div class="form-group">
                     <label >Apellido</label>
-                    <input type="text" class="form-control" placeholder="apellido" id="apellido">
+                    <input type="text" class="form-control" placeholder="Apellido" id="apellido">
                 </div>
                 <div class="form-group">
-                    <label >Matrícula:</label>
-                    <input type="text" class="form-control" placeholder="matricula" id="matricula">
+                    <label >DNI:</label>
+                    <input type="text" class="form-control" placeholder="DNI" id="dni">
+                </div>
+                <div class="form-group">
+                    <label >Fecha Ingreso:</label>
+                    <input type="date" class="form-control" placeholder="Fecha ingreso" id="fechaIngreso">
+                </div>
+                <div class="form-group">
+                    <label >Domicilio:</label>
+                    <input type="text" class="form-control" id="domicilio_id" readonly>
+                </div>
+                <div class="form-group">
+                    <label >Calle:</label>
+                    <input type="text" class="form-control" placeholder="Calle" id="calle">
+                </div>
+                <div class="form-group">
+                    <label >Número:</label>
+                    <input type="text" class="form-control" placeholder="Número" id="numero">
+                </div>
+                <div class="form-group">
+                    <label >Provincia:</label>
+                    <input type="text" class="form-control" placeholder="Provincia" id="provincia">
+                </div>
+                <div class="form-group">
+                    <label >Localidad:</label>
+                    <input type="text" class="form-control" placeholder="Localidad" id="localidad">
                 </div>
 
 
@@ -100,7 +126,7 @@
 
 </div>
 </body>
-<script text="text/javascript" src="/js/odontologo/get_odontologo.js"></script>
-<script text="text/javascript" src="/js/odontologo/update_odontologo.js"></script>
-<script text="text/javascript" src="/js/odontologo/delete_odontologo.js"></script>
+<script text="text/javascript" src="/js/turno/get_turno.js"></script>
+<!--<script text="text/javascript" src="/js/paciente/update_paciente.js"></script>-->
+<script text="text/javascript" src="/js/turno/delete_turno.js"></script>
 </html>
