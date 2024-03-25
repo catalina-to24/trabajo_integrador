@@ -15,7 +15,7 @@ window.addEventListener('load', function () {
          for(dentist of data){
             //por cada odontólogo armaremos una fila de la tabla
             //cada fila tendrá un id que luego nos permitirá borrar la fila si eliminamos el odontólogo
-            var table = document.getElementById("dentistTable");
+            var table = document.getElementById("dentistTableBody");
             var dentistRow =table.insertRow();
             let tr_id = 'tr_' + dentist.id;
             dentistRow.id = tr_id;

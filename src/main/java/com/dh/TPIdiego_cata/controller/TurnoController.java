@@ -1,4 +1,5 @@
 package com.dh.TPIdiego_cata.controller;
+import com.dh.TPIdiego_cata.DTO.TurnoDTO;
 import com.dh.TPIdiego_cata.entity.Turno;
 import com.dh.TPIdiego_cata.service.ITurnoService;
 import com.dh.TPIdiego_cata.service.implementation.TurnoService;

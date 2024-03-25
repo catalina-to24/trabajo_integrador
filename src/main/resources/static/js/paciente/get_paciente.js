@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
 
          for(paciente of data){
 
-            var table = document.getElementById("pacienteTable");
+            var table = document.getElementById("pacienteTableBody");
             var pacienteRow =table.insertRow();
             let tr_id = 'tr_' + paciente.id;
             pacienteRow.id = tr_id;

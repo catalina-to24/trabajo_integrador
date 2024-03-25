@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
 
          for(turno of data){
 
-            var table = document.getElementById("turnoTable");
+            var table = document.getElementById("turnoTableBody");
             var turnoRow =table.insertRow();
             let tr_id = 'tr_' + turno.id;
             turnoRow.id = tr_id;
