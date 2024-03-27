@@ -1,7 +1,9 @@
 package com.dh.TPIdiego_cata.service.implementation;
 
 import com.dh.TPIdiego_cata.entity.Odontologo;
+import com.dh.TPIdiego_cata.exceptions.ResourceNotFoundException;
 import com.dh.TPIdiego_cata.service.IOdontologoService;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,61 +17,49 @@ class OdontologoServiceTest {
     @Autowired
     private IOdontologoService odontologoService;
 
+    private static Odontologo odontologo;
+
+    @BeforeAll
+    public static void setUp() {
+        // Crear un objeto de tipo Odontologo antes de ejecutar los casos de prueba
+        odontologo = new Odontologo();
+        odontologo.setNombre("Juan");
+        odontologo.setApellido("Pérez");
+        odontologo.setMatricula("1234");
+    }
+
     @Test
     public void guardarOdontologo(){
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
-        odontologo.setMatricula("11223344");
         odontologoService.guardar(odontologo);
-
         Odontologo odontologoAgregado = odontologoService.buscarPorId(odontologo.getId());
-
-        assertEquals("Nombre odontólgo", odontologoAgregado.getNombre());
-
+        assertEquals("Juan", odontologoAgregado.getNombre());
     }
 
     @Test
     public void actualizarOdontologo(){
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
-        odontologo.setMatricula("11223344");
-
         odontologoService.guardar(odontologo);
         Odontologo odontologoAgregado = odontologoService.buscarPorId(odontologo.getId());
 
-        odontologoAgregado.setApellido("Nuevo apellido");
+        odontologoAgregado.setApellido("González");
         odontologoService.actualizar(odontologoAgregado);
 
         Odontologo odontologoActualizado = odontologoService.buscarPorId(odontologoAgregado.getId());
 
-        assertEquals("Nuevo apellido",odontologoActualizado.getApellido());
-        assertEquals("Nombre odontólgo", odontologoActualizado.getNombre());
+        assertEquals("González",odontologoActualizado.getApellido());
+        assertEquals("Juan", odontologoActualizado.getNombre());
     }
     @Test
     public void eliminarOdontologo(){
-
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
-        odontologo.setMatricula("11223344");
-
         odontologoService.guardar(odontologo);
         odontologoService.eliminar(odontologo.getId());
         Odontologo odontologoEliminado = odontologoService.buscarPorId(odontologo.getId());
 
         assertTrue(odontologoEliminado == null);
+        //assertThrows(ResourceNotFoundException.class,)
     }
 
     @Test
     public void listarOdontologos(){
-
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
-        odontologo.setMatricula("11223344");
-
         odontologoService.guardar(odontologo);
         List<Odontologo> odontologos = odontologoService.listarTodos();
 

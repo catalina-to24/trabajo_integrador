@@ -9,12 +9,8 @@ window.addEventListener('load', function () {
         const formData = {
             id: document.querySelector('#turno_id').value,
             fechaHora: document.querySelector('#fechaHora').value,
-            paciente: {
-                id: document.querySelector('#paciente').selectedOptions[0].value,
-            },
-            odontologo: {
-                 id: document.querySelector('#odontologo').selectedOptions[0].value,
-            }
+            pacienteId: document.querySelector('#paciente').selectedOptions[0].value,
+            odontologoId: document.querySelector('#odontologo').selectedOptions[0].value,
         };
 
         console.log(formData);

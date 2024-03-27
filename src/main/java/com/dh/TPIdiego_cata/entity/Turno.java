@@ -30,6 +30,4 @@ public class Turno {
     @ManyToOne
     @JoinColumn(name = "paciente_id", nullable = false)
     private Paciente paciente;
-
-
 }

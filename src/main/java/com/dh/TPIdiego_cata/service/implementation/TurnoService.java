@@ -1,15 +1,16 @@
 package com.dh.TPIdiego_cata.service.implementation;
 
-import com.dh.TPIdiego_cata.DTO.TurnoDTO;
+import com.dh.TPIdiego_cata.dto.TurnoDTO;
 import com.dh.TPIdiego_cata.entity.Odontologo;
 import com.dh.TPIdiego_cata.entity.Paciente;
 import com.dh.TPIdiego_cata.entity.Turno;
+import com.dh.TPIdiego_cata.exceptions.ResourceNotFoundException;
 import com.dh.TPIdiego_cata.repository.IOdontologoRepository;
 import com.dh.TPIdiego_cata.repository.IPacienteRepository;
 import com.dh.TPIdiego_cata.repository.ITurnoRepository;
-import com.dh.TPIdiego_cata.service.IPacienteService;
 import com.dh.TPIdiego_cata.service.ITurnoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +20,14 @@ import java.util.Optional;
 
 @Service
 public class TurnoService implements ITurnoService {
+    private static final Logger logger = Logger.getLogger(TurnoService.class);
 
+    @Autowired
     private ITurnoRepository turnoRepository;
-    private IOdontologoRepository odontologoRepository;
 
+    @Autowired
+    private IOdontologoRepository odontologoRepository;
+    @Autowired
     private IPacienteRepository pacienteRepository;
     @Autowired
     public TurnoService(ITurnoRepository turnoRepository) {
@@ -33,59 +38,87 @@ public class TurnoService implements ITurnoService {
     private ObjectMapper objectMapper;
 
     @Override
-    public Turno guardar(Turno turno) {
-        return turnoRepository.save(turno);
+    public TurnoDTO guardar(TurnoDTO turnoDTO) {
+        logger.info("Guardando un turno");
+        Turno turno = new Turno();
+        turno.setFechaHora(turnoDTO.getFechaHora());
+
+        if (turnoDTO.getOdontologoId() != null) {
+            Odontologo odontologo = odontologoRepository.findById(turnoDTO.getOdontologoId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Odontólogo no encontrado con ID "+turnoDTO.getOdontologoId()));
+            turno.setOdontologo(odontologo);
+        }
+
+        if (turnoDTO.getPacienteId() != null) {
+            Paciente paciente = pacienteRepository.findById(turnoDTO.getPacienteId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Paciente no encontrado con ID "+turnoDTO.getOdontologoId()));
+            turno.setPaciente(paciente);
+        }
+
+        turnoRepository.save(turno);
+        logger.info("Turno guardado");
+
+        turnoDTO.setId(turno.getId());
+
+        return turnoDTO;
     }
 
     @Override
     public Turno buscarPorId(Long id) {
-        Turno turno = null;
+        logger.info("Buscando un turno con ID "+id);
         Optional<Turno> turnoOptional = turnoRepository.findById(id);
         if(turnoOptional.isPresent()) {
-            turno = turnoOptional.get();
+            return turnoOptional.get();
+        }else {
+            String message = "No se ha encontrado el turno con ID "+id;
+            logger.error(message);
+            throw new ResourceNotFoundException(message);
         }
-        return turno;
     }
 
     @Override
-    public void actualizar(Turno turno) {
-        turnoRepository.save(turno);
-    }
-
-    /*public void actualizar(TurnoDTO turnoDTO){
-        // Convertir el DTO a la entidad Turno
+    public void actualizar(TurnoDTO turnoDTO){
+        logger.info("Actualizando un turno");
         Turno turno = objectMapper.convertValue(turnoDTO, Turno.class);
 
-        // Buscar el turno existente en la base de datos por su ID
         Turno turnoExistente = turnoRepository.findById(turnoDTO.getId())
-                .orElseThrow(() -> new NoSuchElementException("Turno no encontrado"));
+                .orElseThrow(() -> new ResourceNotFoundException("Turno no encontrado con ID "+turnoDTO.getId()));
 
-        // Actualizar los campos permitidos
-        turnoExistente.setFechaHora(turno.getFechaHora());
+        turnoExistente.setFechaHora(turnoDTO.getFechaHora());
 
         if (turnoDTO.getOdontologoId() != null) {
             Odontologo odontologo = odontologoRepository.findById(turnoDTO.getOdontologoId())
-                    .orElseThrow(() -> new NoSuchElementException("Odontólogo no encontrado"));
+                    .orElseThrow(() -> new ResourceNotFoundException("Odontólogo no encontrado con ID "+turnoDTO.getOdontologoId()));
             turnoExistente.setOdontologo(odontologo);
         }
 
         if (turnoDTO.getPacienteId() != null) {
             Paciente paciente = pacienteRepository.findById(turnoDTO.getPacienteId())
-                    .orElseThrow(() -> new NoSuchElementException("Paciente no encontrado"));
+                    .orElseThrow(() -> new ResourceNotFoundException("Paciente no encontrado con ID "+turnoDTO.getOdontologoId()));
             turnoExistente.setPaciente(paciente);
         }
 
-        // Guardar el turno actualizado en la base de datos
         turnoRepository.save(turnoExistente);
-    }*/
+        logger.info("Turno actualizado");
+    }
 
     @Override
     public void eliminar(Long id) {
-        turnoRepository.deleteById(id);
+        logger.info("Eliminando un turno con ID "+id);
+        Optional<Turno> turnoAEliminar = turnoRepository.findById(id);
+        if (turnoAEliminar.isPresent()) {
+            turnoRepository.deleteById(id);
+            logger.info("Turno eliminado");
+        }else{
+            String message = "No se ha encontrado el truno a eliminar con ID "+id;
+            logger.error(message);
+            throw new ResourceNotFoundException(message);
+        }
     }
 
     @Override
     public List<Turno> listarTodos() {
+        logger.info("Listando todos los turnos");
         return turnoRepository.findAll();
     }
 }

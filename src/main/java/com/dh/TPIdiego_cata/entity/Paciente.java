@@ -25,6 +25,10 @@ public class Paciente {
     private String dni;
     private LocalDate fechaIngreso;
 
+    public Paciente(Long id){
+        this.id = id;
+    }
+
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "domicilio_id" , referencedColumnName= "id")
     private Domicilio domicilio;
@@ -32,6 +36,4 @@ public class Paciente {
     @OneToMany(mappedBy = "paciente")
     @JsonIgnore
     Set<Turno> turnos;
-
-
 }

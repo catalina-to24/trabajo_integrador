@@ -3,6 +3,7 @@ package com.dh.TPIdiego_cata.service.implementation;
 import com.dh.TPIdiego_cata.entity.Domicilio;
 import com.dh.TPIdiego_cata.entity.Paciente;
 import com.dh.TPIdiego_cata.service.IPacienteService;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

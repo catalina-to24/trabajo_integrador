@@ -1,5 +1,5 @@
 package com.dh.TPIdiego_cata.controller;
-import com.dh.TPIdiego_cata.DTO.TurnoDTO;
+import com.dh.TPIdiego_cata.dto.TurnoDTO;
 import com.dh.TPIdiego_cata.entity.Turno;
 import com.dh.TPIdiego_cata.service.ITurnoService;
 import com.dh.TPIdiego_cata.service.implementation.TurnoService;
@@ -26,7 +26,7 @@ public class TurnoController {
 
     }
     @PostMapping
-    public ResponseEntity<Turno> guardar(@RequestBody Turno turno) {
+    public ResponseEntity<TurnoDTO> guardar(@RequestBody TurnoDTO turno) {
         return ResponseEntity.ok(turnoService.guardar(turno));
     }
 
@@ -36,28 +36,14 @@ public class TurnoController {
     }
 
     @PutMapping
-    public ResponseEntity actualizar(@RequestBody Turno turno) {
-        ResponseEntity response;
-        try{
-            turnoService.actualizar(turno);
-            response = ResponseEntity.ok("Se actualizó el turno con id " + turno.getId());
-        }catch (Exception ex){
-             response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el paciente a actualizar");
-        }
+    public ResponseEntity actualizar(@RequestBody TurnoDTO turno) {
+        turnoService.actualizar(turno);
+        return ResponseEntity.ok("Se actualizó el turno con id " + turno.getId());
 
-        return response;
     }
     @DeleteMapping("/{id}")
     public ResponseEntity eliminar(@PathVariable Long id){
-        ResponseEntity response;
-        Turno turnobuscado = turnoService.buscarPorId(id);
-
-        if (turnobuscado != null) {
-            turnoService.eliminar(id);
-            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado correctamente");
-        } else {
-            response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el turno a eliminar");
-        }
-        return response;
+       turnoService.eliminar(id);
+       return ResponseEntity.status(HttpStatus.OK).body("Eliminado correctamente");
     }
 }

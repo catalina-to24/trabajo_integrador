@@ -1,4 +1,4 @@
-package com.dh.TPIdiego_cata.DTO;
+package com.dh.TPIdiego_cata.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -35,27 +35,14 @@ public class OdontologoController {
 
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
-        ResponseEntity<String> response;
-        Odontologo odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
-        if (odontologoBuscado != null) {
-            odontologoService.actualizar(odontologo);
-            response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
-        } else {
-            response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el odontólogo a actualizar");
-        }
-        return response;
+        odontologoService.actualizar(odontologo);
+        return ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
+
     }
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id){
-        ResponseEntity<String> response;
-        Odontologo odontologoBuscado = odontologoService.buscarPorId(id);
-        if (odontologoBuscado != null) {
-            odontologoService.eliminar(id);
-            response = ResponseEntity.status(HttpStatus.OK).body("Eliminado correctamente");
-        } else {
-            response = ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el odontólogo a eliminar");
-        }
-        return response;
+        odontologoService.eliminar(id);
+        return ResponseEntity.status(HttpStatus.OK).body("Eliminado correctamente");
     }
 
 }

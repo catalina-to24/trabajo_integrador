@@ -116,3 +116,43 @@ Column "DOMICLIO_ID" not found [42122-224]
 [2024-03-14 20:03:41] [ INFO ] [DomicilioDaoH2:25] Persistiendo un domicilio
 [2024-03-14 20:03:44] [ INFO ] [PacienteDaoH2:155] Consultando todos los pacientes
 [2024-03-14 20:04:23] [ INFO ] [PacienteDaoH2:155] Consultando todos los pacientes
+[2024-03-26 22:53:10] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:53:10] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 21
+[2024-03-26 22:55:57] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:55:57] [ INFO ] [OdontologoService:60] Eliminando odontólogo
+[2024-03-26 22:55:57] [ INFO ] [OdontologoService:64] Se eliminó el odontólgo con ID22
+[2024-03-26 22:55:57] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 22
+[2024-03-26 22:55:57] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 22
+[2024-03-26 22:56:19] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:56:36] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 23
+[2024-03-26 22:56:36] [ INFO ] [OdontologoService:46] Actualizando odontólogo
+[2024-03-26 22:59:20] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:59:20] [ INFO ] [OdontologoService:60] Eliminando odontólogo
+[2024-03-26 22:59:20] [ INFO ] [OdontologoService:64] Se eliminó el odontólgo con ID24
+[2024-03-26 22:59:20] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 24
+[2024-03-26 22:59:20] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 24
+[2024-03-26 22:59:20] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:59:21] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 24
+[2024-03-26 22:59:21] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 24
+[2024-03-26 22:59:21] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:59:21] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-26 22:59:21] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:59:21] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 24
+[2024-03-26 22:59:21] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 24
+[2024-03-26 22:59:59] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 22:59:59] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 28
+[2024-03-26 23:00:16] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 23:00:16] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 29
+[2024-03-26 23:00:17] [ INFO ] [OdontologoService:46] Actualizando odontólogo
+[2024-03-26 23:00:17] [ INFO ] [OdontologoService:50] Se guardó odontólogo actualizado
+[2024-03-26 23:00:17] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 29
+[2024-03-26 23:00:37] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 23:00:37] [ INFO ] [OdontologoService:60] Eliminando odontólogo
+[2024-03-26 23:00:38] [ INFO ] [OdontologoService:64] Se eliminó el odontólgo con ID30
+[2024-03-26 23:00:38] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 30
+[2024-03-26 23:00:38] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 30
+[2024-03-26 23:01:26] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-26 23:01:38] [ INFO ] [OdontologoService:60] Eliminando odontólogo
+[2024-03-26 23:01:39] [ INFO ] [OdontologoService:64] Se eliminó el odontólgo con ID31
+[2024-03-26 23:01:54] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 31
+[2024-03-26 23:01:54] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 31

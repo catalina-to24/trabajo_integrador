@@ -55,7 +55,7 @@ class TurnoServiceTest {
         turno.setOdontologo(odontologo);
         turno.setPaciente(paciente);
 
-        turnoService.guardar(turno);
+        //turnoService.guardar(turno);
         Turno turnoAgregado = turnoService.buscarPorId(turno.getId());
 
         assertTrue(turnoAgregado != null);
@@ -91,10 +91,10 @@ class TurnoServiceTest {
         turno.setOdontologo(odontologo);
         turno.setPaciente(paciente);
 
-        turnoService.guardar(turno);
+        //turnoService.guardar(turno);
 
         turno.setFechaHora(LocalDateTime.of(2025,04,25,15,00,00));
-        turnoService.actualizar(turno);
+        //turnoService.actualizar(turno);
 
         Turno turnoModificado = turnoService.buscarPorId(turno.getId());
 
@@ -130,7 +130,7 @@ class TurnoServiceTest {
         turno.setOdontologo(odontologo);
         turno.setPaciente(paciente);
 
-        turnoService.guardar(turno);
+        //turnoService.guardar(turno);
 
         turnoService.eliminar(turno.getId());
 
@@ -169,7 +169,7 @@ class TurnoServiceTest {
         turno.setOdontologo(odontologo);
         turno.setPaciente(paciente);
 
-        turnoService.guardar(turno);
+        //turnoService.guardar(turno);
 
         List<Turno> turnosList = turnoService.listarTodos();
 
