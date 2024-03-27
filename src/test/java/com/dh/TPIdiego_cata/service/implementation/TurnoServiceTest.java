@@ -1,12 +1,15 @@
 package com.dh.TPIdiego_cata.service.implementation;
 
+import com.dh.TPIdiego_cata.dto.TurnoDTO;
 import com.dh.TPIdiego_cata.entity.Domicilio;
 import com.dh.TPIdiego_cata.entity.Odontologo;
 import com.dh.TPIdiego_cata.entity.Paciente;
 import com.dh.TPIdiego_cata.entity.Turno;
+import com.dh.TPIdiego_cata.exceptions.ResourceNotFoundException;
 import com.dh.TPIdiego_cata.service.IOdontologoService;
 import com.dh.TPIdiego_cata.service.IPacienteService;
 import com.dh.TPIdiego_cata.service.ITurnoService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -26,37 +29,44 @@ class TurnoServiceTest {
     @Autowired
     ITurnoService turnoService;
 
-    @Test
-    public void guardarTurno(){
+    private Odontologo odontologo;
+    private Paciente paciente;
+    private Turno turno;
+
+    @BeforeEach
+    public void setUp(){
         //creamos y guardamos el odontologo
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
+        odontologo = new Odontologo();
+        odontologo.setNombre("Juan");
+        odontologo.setApellido("Pérez");
         odontologo.setMatricula("11223344");
         odontologoService.guardar(odontologo);
 
         //creamos y guardamos el paciente con un domicilio
-        Paciente paciente = new Paciente();
-        paciente.setNombre("Nombre prueba");
-        paciente.setApellido("Apellido prueba");
-        paciente.setDni("99998888");
+        paciente = new Paciente();
+        paciente.setNombre("Carlos");
+        paciente.setApellido("Romano");
+        paciente.setDni("998877");
         paciente.setFechaIngreso(LocalDate.now());
         Domicilio domicilio = new Domicilio();
         domicilio.setNumero(112233);
-        domicilio.setCalle("Calle de prueba");
-        domicilio.setLocalidad("Localidad prueba");
-        domicilio.setProvincia("Provincia prueba");
+        domicilio.setCalle("Rivadavia");
+        domicilio.setLocalidad("CABA");
+        domicilio.setProvincia("Buenos Aires");
         paciente.setDomicilio(domicilio);
         pacienteService.guardar(paciente);
+    }
 
+    @Test
+    public void guardarTurno(){
         //creamos y guardamos el turno
-        Turno turno = new Turno();
-        turno.setFechaHora(LocalDateTime.now());
-        turno.setOdontologo(odontologo);
-        turno.setPaciente(paciente);
+        TurnoDTO turnoDTO = new TurnoDTO();
+        turnoDTO.setFechaHora(LocalDateTime.now());
+        turnoDTO.setOdontologoId(odontologo.getId());
+        turnoDTO.setPacienteId(paciente.getId());
 
-        //turnoService.guardar(turno);
-        Turno turnoAgregado = turnoService.buscarPorId(turno.getId());
+        turnoService.guardar(turnoDTO);
+        Turno turnoAgregado = turnoService.buscarPorId(turnoDTO.getId());
 
         assertTrue(turnoAgregado != null);
 
@@ -64,112 +74,47 @@ class TurnoServiceTest {
 
     @Test
     public void actualizarTurno(){
-        //creamos y guardamos el odontologo
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
-        odontologo.setMatricula("11223344");
-        odontologoService.guardar(odontologo);
+        TurnoDTO turnoDTO = new TurnoDTO();
+        turnoDTO.setFechaHora(LocalDateTime.now());
+        turnoDTO.setOdontologoId(odontologo.getId());
+        turnoDTO.setPacienteId(paciente.getId());
 
-        //creamos y guardamos el paciente con un domicilio
-        Paciente paciente = new Paciente();
-        paciente.setNombre("Nombre prueba");
-        paciente.setApellido("Apellido prueba");
-        paciente.setDni("99998888");
-        paciente.setFechaIngreso(LocalDate.now());
-        Domicilio domicilio = new Domicilio();
-        domicilio.setNumero(112233);
-        domicilio.setCalle("Calle de prueba");
-        domicilio.setLocalidad("Localidad prueba");
-        domicilio.setProvincia("Provincia prueba");
-        paciente.setDomicilio(domicilio);
-        pacienteService.guardar(paciente);
+        turnoService.guardar(turnoDTO);
 
-        //creamos y guardamos el turno
-        Turno turno = new Turno();
-        turno.setFechaHora(LocalDateTime.now());
-        turno.setOdontologo(odontologo);
-        turno.setPaciente(paciente);
+        turnoDTO.setFechaHora(LocalDateTime.of(2025,04,25,15,00,00));
+        turnoService.actualizar(turnoDTO);
 
-        //turnoService.guardar(turno);
+        Turno turnoModificado = turnoService.buscarPorId(turnoDTO.getId());
 
-        turno.setFechaHora(LocalDateTime.of(2025,04,25,15,00,00));
-        //turnoService.actualizar(turno);
-
-        Turno turnoModificado = turnoService.buscarPorId(turno.getId());
-
-        assertFalse(turno.getFechaHora() == turnoModificado.getFechaHora());
+        assertEquals(turnoDTO.getFechaHora(), turnoModificado.getFechaHora());
 
     }
     @Test
     public void eliminarTurno(){
-        //creamos y guardamos el odontologo
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
-        odontologo.setMatricula("11223344");
-        odontologoService.guardar(odontologo);
+        TurnoDTO turnoDTO = new TurnoDTO();
+        turnoDTO.setFechaHora(LocalDateTime.now());
+        turnoDTO.setOdontologoId(odontologo.getId());
+        turnoDTO.setPacienteId(paciente.getId());
 
-        //creamos y guardamos el paciente con un domicilio
-        Paciente paciente = new Paciente();
-        paciente.setNombre("Nombre prueba");
-        paciente.setApellido("Apellido prueba");
-        paciente.setDni("99998888");
-        paciente.setFechaIngreso(LocalDate.now());
-        Domicilio domicilio = new Domicilio();
-        domicilio.setNumero(112233);
-        domicilio.setCalle("Calle de prueba");
-        domicilio.setLocalidad("Localidad prueba");
-        domicilio.setProvincia("Provincia prueba");
-        paciente.setDomicilio(domicilio);
-        pacienteService.guardar(paciente);
+        turnoService.guardar(turnoDTO);
 
-        //creamos y guardamos el turno
-        Turno turno = new Turno();
-        turno.setFechaHora(LocalDateTime.now());
-        turno.setOdontologo(odontologo);
-        turno.setPaciente(paciente);
+        turnoService.eliminar(turnoDTO.getId());
 
-        //turnoService.guardar(turno);
+        //testeamos que se esté tirando una excepción del tipo ResourceNotFoundException
+        ResourceNotFoundException exception = assertThrows(ResourceNotFoundException.class, () -> turnoService.buscarPorId(turnoDTO.getId()));
 
-        turnoService.eliminar(turno.getId());
-
-        Turno turnoEliminado = turnoService.buscarPorId(turno.getId());
-
-        assertTrue(turnoEliminado == null);
-
+        //testeamos que el mensaje de la excepción se correponda con el esperado
+        assertEquals("No se ha encontrado el turno con ID "+turnoDTO.getId(), exception.getMessage());
     }
 
     @Test
     public void listarTurnos(){
-        //creamos y guardamos el odontologo
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("Nombre odontólgo");
-        odontologo.setApellido("Apellido odontólgo");
-        odontologo.setMatricula("11223344");
-        odontologoService.guardar(odontologo);
+        TurnoDTO turnoDTO = new TurnoDTO();
+        turnoDTO.setFechaHora(LocalDateTime.now());
+        turnoDTO.setOdontologoId(odontologo.getId());
+        turnoDTO.setPacienteId(paciente.getId());
 
-        //creamos y guardamos el paciente con un domicilio
-        Paciente paciente = new Paciente();
-        paciente.setNombre("Nombre prueba");
-        paciente.setApellido("Apellido prueba");
-        paciente.setDni("99998888");
-        paciente.setFechaIngreso(LocalDate.now());
-        Domicilio domicilio = new Domicilio();
-        domicilio.setNumero(112233);
-        domicilio.setCalle("Calle de prueba");
-        domicilio.setLocalidad("Localidad prueba");
-        domicilio.setProvincia("Provincia prueba");
-        paciente.setDomicilio(domicilio);
-        pacienteService.guardar(paciente);
-
-        //creamos y guardamos el turno
-        Turno turno = new Turno();
-        turno.setFechaHora(LocalDateTime.now());
-        turno.setOdontologo(odontologo);
-        turno.setPaciente(paciente);
-
-        //turnoService.guardar(turno);
+        turnoService.guardar(turnoDTO);
 
         List<Turno> turnosList = turnoService.listarTodos();
 

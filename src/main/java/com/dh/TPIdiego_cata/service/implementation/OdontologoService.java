@@ -74,4 +74,22 @@ public class OdontologoService implements IOdontologoService {
         logger.info("Listando todos los odontólogo");
         return odontologoRepository.findAll();
     }
+
+    @Override
+    public List<Odontologo> listOrderByNombre() {
+        logger.info("Listando todos los odontólogo ordenados por nombre");
+        return odontologoRepository.listOrderByNombre();
+    }
+
+    @Override
+    public List<Odontologo> listOrderByApellido() {
+        logger.info("Listando todos los odontólogo ordenados por apellido");
+        return odontologoRepository.listOrderByApellido();
+    }
+
+    @Override
+    public List<Odontologo> listOrderByMatricula() {
+        logger.info("Listando todos los odontólogo ordenados por matrícula");
+        return odontologoRepository.listOrderByMatricula();
+    }
 }
