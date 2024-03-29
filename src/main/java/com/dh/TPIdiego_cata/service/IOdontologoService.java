@@ -14,4 +14,6 @@ public interface IOdontologoService {
     public List<Odontologo> listOrderByNombre();
     public List<Odontologo> listOrderByApellido();
     public List<Odontologo> listOrderByMatricula();
+
+    public Odontologo findByMatricula(String matricula);
 }

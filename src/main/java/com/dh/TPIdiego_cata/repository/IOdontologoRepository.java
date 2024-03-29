@@ -18,5 +18,5 @@ public interface IOdontologoRepository extends JpaRepository<Odontologo, Long> {
     @Query("FROM Odontologo o ORDER BY o.apellido ASC")
     List<Odontologo> listOrderByApellido();
 
-    Optional<Odontologo> findByMatricula(String matricula);
+    Optional<Odontologo> findFirstByMatricula(String matricula);
 }

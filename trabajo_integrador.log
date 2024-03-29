@@ -326,3 +326,171 @@ Column "DOMICLIO_ID" not found [42122-224]
 [2024-03-27 17:52:07] [ INFO ] [OdontologoService:27] Guardando un odontólogo
 [2024-03-27 17:52:07] [ INFO ] [OdontologoService:27] Guardando un odontólogo
 [2024-03-27 17:52:07] [ INFO ] [OdontologoService:92] Listando todos los odontólogo ordenados por matrícula
+[2024-03-29 17:26:12] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:26:12] [ INFO ] [OdontologoService:98] Buscando por matrícula al odontólogo
+[2024-03-29 17:28:08] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:08] [ INFO ] [OdontologoService:98] Buscando por matrícula al odontólogo
+[2024-03-29 17:28:54] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:54] [ INFO ] [OdontologoService:60] Eliminando odontólogo
+[2024-03-29 17:28:54] [ INFO ] [OdontologoService:64] Se eliminó el odontólgo con ID1
+[2024-03-29 17:28:54] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 1
+[2024-03-29 17:28:54] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 1
+[2024-03-29 17:28:54] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:54] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:54] [ INFO ] [OdontologoService:80] Listando todos los odontólogo ordenados por nombre
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 4
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:46] Actualizando odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:50] Se guardó odontólogo actualizado
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 4
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:98] Buscando por matrícula al odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:86] Listando todos los odontólogo ordenados por apellido
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 9
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:28:55] [ INFO ] [OdontologoService:92] Listando todos los odontólogo ordenados por matrícula
+[2024-03-29 17:33:32] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:32] [ INFO ] [OdontologoService:60] Eliminando odontólogo
+[2024-03-29 17:33:32] [ INFO ] [OdontologoService:64] Se eliminó el odontólgo con ID1
+[2024-03-29 17:33:32] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 1
+[2024-03-29 17:33:32] [ ERROR] [OdontologoService:39] No se ha encontrado el odontologo con ID 1
+[2024-03-29 17:33:32] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:32] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:32] [ INFO ] [OdontologoService:80] Listando todos los odontólogo ordenados por nombre
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 4
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:46] Actualizando odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:50] Se guardó odontólogo actualizado
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 4
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:98] Buscando por matrícula al odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:86] Listando todos los odontólogo ordenados por apellido
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 9
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:33:33] [ INFO ] [OdontologoService:92] Listando todos los odontólogo ordenados por matrícula
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:61] Eliminando un paciente con ID1
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:65] Paciente eliminado
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:33] Buscando un paciente con ID 1
+[2024-03-29 17:34:14] [ ERROR] [PacienteService:39] No se ha encontrado el paciente con ID 1
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:33] Buscando un paciente con ID 2
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:47] Actualizando un paciente
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:51] Paciente actualizado
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:33] Buscando un paciente con ID 2
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:33] Buscando un paciente con ID 3
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:34:14] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:35:09] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:09] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:81] Actualizando un turno
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:102] Turno actualizado
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:68] Buscando un turno con ID 1
+[2024-03-29 17:35:09] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:09] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:107] Eliminando un turno con ID 2
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:111] Turno eliminado
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:68] Buscando un turno con ID 2
+[2024-03-29 17:35:09] [ ERROR] [TurnoService:74] No se ha encontrado el turno con ID 2
+[2024-03-29 17:35:09] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:09] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:35:09] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:09] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:09] [ INFO ] [TurnoService:68] Buscando un turno con ID 4
+[2024-03-29 17:35:52] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:52] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:81] Actualizando un turno
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:102] Turno actualizado
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:68] Buscando un turno con ID 1
+[2024-03-29 17:35:52] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:52] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:107] Eliminando un turno con ID 2
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:111] Turno eliminado
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:68] Buscando un turno con ID 2
+[2024-03-29 17:35:52] [ ERROR] [TurnoService:74] No se ha encontrado el turno con ID 2
+[2024-03-29 17:35:52] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:52] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:35:52] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:35:52] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:35:52] [ INFO ] [TurnoService:68] Buscando un turno con ID 4
+[2024-03-29 17:36:49] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:37:19] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:37:22] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:37:33] [ INFO ] [OdontologoService:27] Guardando un odontólogo
+[2024-03-29 17:37:35] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:37:40] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:38:20] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:38:27] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:39:11] [ INFO ] [PacienteService:27] Guardando un paciente
+[2024-03-29 17:39:16] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:39:21] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:39:22] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:39:22] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:39:36] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:39:36] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:39:38] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:39:45] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:39:45] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:39:46] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:39:49] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:39:51] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:39:51] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:40:04] [ INFO ] [TurnoService:42] Guardando un turno
+[2024-03-29 17:40:04] [ INFO ] [TurnoService:59] Turno guardado
+[2024-03-29 17:40:05] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:40:09] [ INFO ] [TurnoService:68] Buscando un turno con ID 2
+[2024-03-29 17:40:09] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:40:09] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:40:14] [ INFO ] [TurnoService:81] Actualizando un turno
+[2024-03-29 17:40:14] [ INFO ] [TurnoService:102] Turno actualizado
+[2024-03-29 17:40:16] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:40:24] [ INFO ] [TurnoService:107] Eliminando un turno con ID 2
+[2024-03-29 17:40:24] [ INFO ] [TurnoService:111] Turno eliminado
+[2024-03-29 17:40:25] [ INFO ] [TurnoService:121] Listando todos los turnos
+[2024-03-29 17:40:28] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:40:31] [ INFO ] [PacienteService:61] Eliminando un paciente con ID2
+[2024-03-29 17:40:31] [ INFO ] [PacienteService:65] Paciente eliminado
+[2024-03-29 17:40:33] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:40:34] [ INFO ] [PacienteService:33] Buscando un paciente con ID 1
+[2024-03-29 17:40:43] [ INFO ] [PacienteService:47] Actualizando un paciente
+[2024-03-29 17:40:43] [ INFO ] [PacienteService:51] Paciente actualizado
+[2024-03-29 17:40:48] [ INFO ] [PacienteService:76] Listando todos los pacientes
+[2024-03-29 17:40:53] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:40:55] [ INFO ] [OdontologoService:60] Eliminando odontólogo
+[2024-03-29 17:40:55] [ INFO ] [OdontologoService:64] Se eliminó el odontólgo con ID1
+[2024-03-29 17:40:58] [ INFO ] [OdontologoService:74] Listando todos los odontólogo
+[2024-03-29 17:41:00] [ INFO ] [OdontologoService:33] Buscando odontólogo con ID 2
+[2024-03-29 17:41:08] [ INFO ] [OdontologoService:46] Actualizando odontólogo
+[2024-03-29 17:41:08] [ INFO ] [OdontologoService:50] Se guardó odontólogo actualizado
+[2024-03-29 17:41:10] [ INFO ] [OdontologoService:74] Listando todos los odontólogo

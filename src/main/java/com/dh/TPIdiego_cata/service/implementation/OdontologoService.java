@@ -92,4 +92,17 @@ public class OdontologoService implements IOdontologoService {
         logger.info("Listando todos los odontólogo ordenados por matrícula");
         return odontologoRepository.listOrderByMatricula();
     }
+
+    @Override
+    public Odontologo findByMatricula(String matricula) {
+        logger.info("Buscando por matrícula al odontólogo");
+        Optional<Odontologo> odontologoBuscado = odontologoRepository.findFirstByMatricula(matricula);
+        if (odontologoBuscado.isPresent()) {
+            return odontologoBuscado.get();
+        }else{
+            String message = "No se ha encontrado el odontologo con matrícula "+matricula;
+            logger.error(message);
+            throw new ResourceNotFoundException(message);
+        }
+    }
 }

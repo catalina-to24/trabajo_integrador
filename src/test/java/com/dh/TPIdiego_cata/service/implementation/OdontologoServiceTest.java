@@ -113,6 +113,14 @@ class OdontologoServiceTest {
         assertEquals(newOdontologo.getMatricula(),odontologos.get(0).getMatricula());
     }
 
-    //TODO
-    //test obtener Odontólogo por matrícula
+    @Test
+    public void buscarOdontologoPorMatricula(){
+        odontologoService.guardar(odontologo);
+
+        Odontologo odontologoBuscado = odontologoService.findByMatricula(odontologo.getMatricula());
+
+        assertEquals(odontologo.getMatricula(),odontologoBuscado.getMatricula());
+
+
+    }
 }
